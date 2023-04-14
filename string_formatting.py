@@ -43,4 +43,22 @@ for i in range(1,11):
 
 for i in range(1,11):
     sentence = 'the value is {:03}'.format(i)       #padding of zero and 3 digit places.
-    print(sentence)    
+    print(sentence) 
+
+pi = 3.14159265
+sentence = 'pi value is {:.2f}'.format(pi)
+print("the value of pi at 2 decimal places:",sentence)
+
+sentence = '1 MB is same as to {:,}'.format(1000**2)  #comma separated values
+print(sentence)
+
+import datetime
+my_date = datetime.datetime(2023, 4, 14, 16, 58, 23)
+print(my_date)   #o/p: 2023-04-14 16:58:23
+
+sentence = '{:%B %d, %Y}'.format(my_date)
+print(sentence)
+
+#April 14 ,2023 fell on Friday and was the 104 day of the year.
+sentence = '{0:%B %d, %Y} fell on a {0:%A} and was the {0:%j} day of the year.'.format(my_date)
+print(sentence)
