@@ -1,2 +1,2 @@
 # hands_on
-for git hands on
+for git/python hands on
