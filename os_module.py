@@ -32,7 +32,26 @@ print(datetime.fromtimestamp(last_modified_time)) #o/p: 2023-04-14 15:38:19.7245
 
 '''To walk to the directory and its sub-directory and the files in the direcory tree then use os.walk'''
 
-for dirpath, dirnames, filenames in os.walk('D:\python_practice\hands_on'):
+for dirpath, dirnames, filenames in os.walk(os.getcwd()):
     print("Directory_path: ",dirpath)
     print("Directory_names: ",dirnames)
     print("file_names: ",filenames)
+
+'''get environment variables'''
+print("home environmet variables: ",os.environ.get('HOME'))
+#if we want to add a file 'new.py' on the home directory then
+#file_new_path = os.environ.get('HOME') + 'new.py'
+#print(file_new_path) # bt this could create problem while concatinating like forward slashes will not be at right position. so will use os.path
+file_new_path = os.path.join(r'D:\python_practice\hands_on\new_folder', 'new.py') #sing r the \n will also be printed
+print(file_new_path)
+
+with open(file_new_path,'w') as f:
+    f.write("I am writing data into a file.")
+
+print(os.path.basename('/tmp/text.py'))    
+print(os.path.dirname('/tmp/text.py'))    
+print(os.path.split('/tmp/text.py'))    #o/p: returns ('/tmp', 'text.py') directory name first then basename.
+
+print(os.path.exists('/tmp/text.py'))  #o/p: False, returns boolean values if the path is a fake path or it really exists.
+
+
