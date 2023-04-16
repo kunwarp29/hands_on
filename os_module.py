@@ -53,5 +53,9 @@ print(os.path.dirname('/tmp/text.py'))
 print(os.path.split('/tmp/text.py'))    #o/p: returns ('/tmp', 'text.py') directory name first then basename.
 
 print(os.path.exists('/tmp/text.py'))  #o/p: False, returns boolean values if the path is a fake path or it really exists.
+print(os.path.isdir('/tmp/text'))
+print(os.path.isfile('/tmp/text.py'))
+print(os.path.splitext('/tmp/text.py')) #o/p: ('/tmp/text', '.py')
+print(dir(os.path))
 
 
