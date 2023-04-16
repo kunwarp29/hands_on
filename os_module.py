@@ -1,4 +1,4 @@
-import os   #os module allows us to interact with underling operating system like navigate the file system,get file information and move files around.'
+import os   #The os module allows us to access functionality of the underlying operating system. So we can perform tasks such as: navigate the file system, obtain file information, rename files, search directory trees, fetch environment variables, and many other operations. 
 '''Its a built-in module so don't need to install any third party libraries.'''
 #print(dir(os)) #all the attribtes and methods which are present in this module.
 '''
@@ -11,10 +11,28 @@ print(os.getcwd()) # to know about the current working directory.
 print(os.listdir()) # to know about the files present in the current directory.
 
 '''If we want to create a folder in the current directory'''
-os.mkdir('new_folder') #to create only top level directory
-os.makedirs('new_folder2/child_dir') # to create top level direcory as well as sub-directory.
+#os.mkdir('new_folder') #to create only top level directory only if this directory is not already created
+#os.makedirs('new_folder2/child_dir') # to create top level direcory as well as sub-directory.
 print(os.listdir())
 
 '''To delete the directory'''
-os.rmdir('new_folder')
-os.removedirs('new_folder2/child_dir')
+#os.rmdir('new_folder') #to delete the directory
+#os.removedirs('new_folder2/child_dir') #to delete the directory as well as sub-directory.
+
+'''Rename a file or folder'''
+#os.rename('abc.py', 'sum.py') #os.rename(old_file_name, new_file_name)
+print(os.listdir())
+
+print(os.stat('sum.py')) #to know the info about file o/p: os.stat_result(st_mode=33206, st_ino=281474976722716, st_dev=1719336346, st_nlink=1, st_uid=0, st_gid=0, st_size=80, st_atime=1681582628, st_mtime=1681466899, st_ctime=1681466899)
+print(os.stat('sum.py').st_mtime) # o/p: last modified time = 1681466899.7245493 
+'''since last modified time is not readable to import dateime '''
+from datetime import datetime
+last_modified_time = os.stat('sum.py').st_mtime
+print(datetime.fromtimestamp(last_modified_time)) #o/p: 2023-04-14 15:38:19.724549
+
+'''To walk to the directory and its sub-directory and the files in the direcory tree then use os.walk'''
+
+for dirpath, dirnames, filenames in os.walk('D:\python_practice\hands_on'):
+    print("Directory_path: ",dirpath)
+    print("Directory_names: ",dirnames)
+    print("file_names: ",filenames)
