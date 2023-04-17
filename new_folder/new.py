@@ -1,1 +1,1 @@
-I am writing data into a file.
+print("I am writing data into a file.")
