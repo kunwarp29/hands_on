@@ -1,1 +1,1 @@
-print("I am writing data into a file.")
+I am writing data into a file.

@@ -56,6 +56,7 @@ print(os.path.exists('/tmp/text.py'))  #o/p: False, returns boolean values if th
 print(os.path.isdir('/tmp/text'))
 print(os.path.isfile('/tmp/text.py'))
 print(os.path.splitext('/tmp/text.py')) #o/p: ('/tmp/text', '.py')
-print(dir(os.path))
+print(dir(os.path)) #all the attributes and modules related.
+
 
 
